@@ -12,6 +12,7 @@ pipeline {
           yamlFile 'nodejs-pod.yaml'
         }
       }
+    }
     stage('Build and Push Image') {
       when {
          beforeAgent true
