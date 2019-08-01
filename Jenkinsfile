@@ -5,12 +5,10 @@ pipeline {
     skipDefaultCheckout true
   }
   stages {
-     agent { label 'nodejs-app' }
-      steps {
-        checkout scm
-        container('nodejs') {
-          echo 'Hello World!'   
-          sh 'node --version'
+     agent {
+        kubernetes {
+          label 'nodejs-app-pod'
+          yamlFile 'nodejs-pod.yaml'
         }
       }
     }
