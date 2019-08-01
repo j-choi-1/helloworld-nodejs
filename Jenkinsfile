@@ -13,6 +13,7 @@ pipeline {
         }
       }
     }
+  }
     stage('Build and Push Image') {
       when {
          beforeAgent true
